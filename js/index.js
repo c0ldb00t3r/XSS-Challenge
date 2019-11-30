@@ -23,7 +23,7 @@ function xssChallenge() {
   } else if (chal3.checked) {
     inputV = inputV.replace(/>|</g, "");
     inputV = inputV.replace(/(“)|(”)/g, '"');
-    codeOutput(`<input type="hidden" name="redacted" value=\"${inputV}\">`);
+    codeOutput(`<input type="" name="redacted" value=\"${inputV}\">`);
   } else if (chal4.checked) {
     inputV = inputV.replace(/>|</g, "");
     inputV = inputV.replace(/(“)|(”)/g, '"');
@@ -51,13 +51,13 @@ function codeSelection() {
     codeSnippet(`<a href="[variable]">Click Me</a>`);
     rulesDisplay('Double quotes (") and angle brackets (< , >)');
   } else if (chal3.checked) {
-    codeSnippet(`<img src="[variable]">`);
+    codeSnippet(`<input type="" name="redacted" value="[variable]">`);
     rulesDisplay("Angle brackets (< , >)");
   } else if (chal4.checked) {
     codeSnippet(`<input type="hidden" name="redacted" value="[variable]">`);
     rulesDisplay("Angle brackets (< , >)");
   } else if (chal5.checked) {
-    codeSnippet(`<input type="hidden" name="redacted" value="[variable]">`);
+    codeSnippet(`<img src="[variable]">`);
     rulesDisplay("Angle brackets (< , >)");
   } else {
     codeSnippet(`Please select a challenge number.`);
