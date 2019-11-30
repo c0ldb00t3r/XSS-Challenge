@@ -23,11 +23,11 @@ function xssChallenge() {
   } else if (chal3.checked) {
     inputV = inputV.replace(/>|</g, "");
     inputV = inputV.replace(/(“)|(”)/g, '"');
-    codeOutput(`<img src=\"${inputV}\">`);
+    codeOutput(`<input type="hidden" name="redacted" value=\"${inputV}\">`);
   } else if (chal4.checked) {
     inputV = inputV.replace(/>|</g, "");
     inputV = inputV.replace(/(“)|(”)/g, '"');
-    codeOutput(`<img src=\"${inputV}\">`);
+    codeOutput(`<input type="hidden" name="redacted" value=\"${inputV}\">`);
   } else if (chal5.checked) {
     inputV = inputV.replace(/>|</g, "");
     inputV = inputV.replace(/(“)|(”)/g, '"');
