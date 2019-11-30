@@ -7,6 +7,8 @@ const code = document.querySelector("#code");
 const chal1 = document.querySelector("#chal-1");
 const chal2 = document.querySelector("#chal-2");
 const chal3 = document.querySelector("#chal-3");
+const chal4 = document.querySelector("#chal-4");
+const chal5 = document.querySelector("#chal-5");
 const rules = document.querySelector("#rules");
 const ruleLine = document.querySelector("#ruleLine");
 
@@ -19,6 +21,14 @@ function xssChallenge() {
     inputV = inputV.replace(/>|(”)|(“)|(")|</g, "");
     codeOutput(`<a href=\"${inputV}\">Click Me</a>`);
   } else if (chal3.checked) {
+    inputV = inputV.replace(/>|</g, "");
+    inputV = inputV.replace(/(“)|(”)/g, '"');
+    codeOutput(`<img src=\"${inputV}\">`);
+  } else if (chal4.checked) {
+    inputV = inputV.replace(/>|</g, "");
+    inputV = inputV.replace(/(“)|(”)/g, '"');
+    codeOutput(`<img src=\"${inputV}\">`);
+  } else if (chal5.checked) {
     inputV = inputV.replace(/>|</g, "");
     inputV = inputV.replace(/(“)|(”)/g, '"');
     codeOutput(`<img src=\"${inputV}\">`);
@@ -42,6 +52,12 @@ function codeSelection() {
     rulesDisplay('Double quotes (") and angle brackets (< , >)');
   } else if (chal3.checked) {
     codeSnippet(`<img src="[variable]">`);
+    rulesDisplay("Angle brackets (< , >)");
+  } else if (chal4.checked) {
+    codeSnippet(`<input type="hidden" name="redacted" value="[variable]">`);
+    rulesDisplay("Angle brackets (< , >)");
+  } else if (chal5.checked) {
+    codeSnippet(`<input type="hidden" name="redacted" value="[variable]">`);
     rulesDisplay("Angle brackets (< , >)");
   } else {
     codeSnippet(`Please select a challenge number.`);
